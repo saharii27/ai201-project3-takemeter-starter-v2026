@@ -2,9 +2,7 @@
 #
 # Copy these from your README so the baseline is judged on exactly the
 # definitions you wrote. baseline.py reads this file.
-#
-# Delete the examples below and put yours in.
 
-analysis: makes an argument backed by a specific, checkable fact
-hot_take: a confident claim with no support offered
-reaction: an immediate response to something that just happened
+sourced_claim: makes a point about the job market or tech industry and includes evidence a stranger could check from the post itself: a link, a direct quote, or a specific named report or announcement
+hot_take: a confident claim or piece of news about the industry with nothing a stranger could check, including hearsay, vague sources, and claims backed only by the poster's own experience
+personal_story: shares the poster's own situation or feelings without arguing a point about the wider job market
