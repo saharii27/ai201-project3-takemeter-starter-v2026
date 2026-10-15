@@ -53,59 +53,41 @@ whether you hit them:
 
 ## 1.
 
-<!-- Your criterion. It must name a number. -->
+Overall accuracy on the held-out test set is at least 70% on every one of the three seeds.
 
-
-
-**Why this target:**
-
-
+**Why this target:** Three labels means random guessing gets about 33%. My balance cap is 60%, so a model that always guessed my biggest label could score up to 60% without learning anything. 70% is the lowest target that clearly beats that. With a test split of about 30 posts, one wrong prediction moves accuracy by about 3 points, so I need to clear 70% on my worst seed, not just my best.
 
 ---
 
 ## 2.
 
-<!-- Your criterion. -->
+No label is more than 60% of labels.csv.
 
-
-
-**Why this target:**
-
-
+**Why this target:** The project's hard cap is 70%, but at 70% a model that always guesses one label already scores 70%, which would make my accuracy target meaningless. 60% leaves room for hot_take to be the biggest label, as I expect on this subreddit, while keeping the accuracy target above the guessing baseline.
 
 ---
 
 ## 3.
 
-<!-- Your criterion. -->
+When someone else labels the same posts, we agree on at least 70% of them.
 
-
-
-**Why this target:**
-
-
+**Why this target:** My hardest boundary is sourced_claim vs hot_take, which depends on whether a stranger could check the evidence, and that is a judgment call. In my stress test I disagreed with my own definitions on several of eight posts, so I don't expect near-perfect agreement. 70% is where I'd call the labels trustworthy enough to train on, and the model can't be expected to be more consistent than the labels it learned from.
 
 ---
 
 ## 4.
 
-<!-- Your criterion. -->
+Every label (sourced_claim, hot_take, personal_story) has an F1 of at least ____ on the held-out test set on every seed.
 
-
-
-**Why this target:**
-
-
+**Why this target:** sourced_claim is likely my rarest label because my definition requires a checkable link, quote, or named report. With about 200 posts, only a handful of its examples will land in the test split, so its F1 will swing between seeds. [Add one sentence on why you chose this number, and whether it is looser or stricter than the accuracy target.]
 
 ---
 
 ## 5.
 
-<!-- Your criterion. -->
+My smallest label has at least ____ examples in labels.csv.
 
-
-
-**Why this target:**
+**Why this target:** [Explain why this minimum. With a 70/15/15 split, a label with N examples puts about N x 0.15 in the test set, so a minimum of 50 gives about 8 test examples. Say what number of test examples you'd need for its F1 to mean anything.]
 
 
 
